@@ -1,0 +1,37 @@
+<i:arg name="title"
+       type="String"
+       default=""/>
+<i:arg name="subtitle"
+       type="String"
+       default=""/>
+<i:arg name="notice"
+       type="String"
+       default=""/>
+
+<div style="
+pointer-events: none;
+position: fixed;
+width: 100vw;
+height: 100vh;
+left: 0;
+top: 0;
+background-image: url(/assets/images/ninja.png);
+background-repeat: no-repeat;
+background-position: center;
+background-size: auto 80vh;
+opacity: 3%;
+"></div>
+
+<t:pageHeader title="@title">
+    <i:if test="isFilled(subtitle) || isFilled(notice)">
+    <p>
+        <i:if test="isFilled(subtitle)">
+            @subtitle
+        </i:if>
+        <i:if test="isFilled(notice)">
+            <br/>
+            <span class="text-muted small">@notice</span>
+        </i:if>
+    </p>
+    </i:if>
+</t:pageHeader>
